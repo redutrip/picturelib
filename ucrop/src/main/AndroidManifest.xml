@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yalantis.ucrop">
+    <!--android:installLocation="preferExternal"-->//默认存储在SD
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.luck.picture.lib.ui.PictureAlbumDirectoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+        <activity
+            android:name="com.luck.picture.lib.ui.PictureImageGridActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+        <activity
+            android:name="com.luck.picture.lib.ui.PicturePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+        <activity
+            android:name="com.luck.picture.lib.ui.PictureVideoPlayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+
+        <activity
+            android:name="com.luck.picture.lib.ui.PictureExternalPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+
+        <activity
+            android:name="com.yalantis.ucrop.ui.PictureMultiCuttingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+
+        <activity
+            android:name="com.yalantis.ucrop.ui.PictureSingeUCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ucrop_theme_slider" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.kkyou.tgp.guide.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <!--元数据-->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/ucrop_file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

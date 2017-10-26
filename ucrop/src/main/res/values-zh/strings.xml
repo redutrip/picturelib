@@ -1,0 +1,32 @@
+<resources>
+    <string name="ucrop_label_original">原始比例</string>
+    <string name="ucrop_label_edit_photo">裁剪</string>
+
+    <string name="ucrop_menu_crop">裁剪</string>
+
+
+    <string name="ucrop_picturelib_all_image">所有图片</string>
+    <string name="ucrop_picturelib_all_video">所有视频</string>
+    <string name="ucrop_picturelib_photo">照片</string>
+    <string name="ucrop_picturelib_all_photo">所有相册</string>
+    <string name="ucrop_picturelib_cancel">取消</string>
+    <string name="ucrop_picturelib_picture">图片</string>
+    <string name="ucrop_picturelib_take_picture">拍摄</string>
+    <string name="ucrop_picturelib_preview">预览</string>
+    <string name="ucrop_picturelib_preview_num">预览(%1$s)</string>
+    <string name="ucrop_picturelib_choose">选择</string>
+    <string name="ucrop_picturelib_done">完成</string>
+    <string name="ucrop_picturelib_use">使用</string>
+    <string name="ucrop_picturelib_done_num">完成(%1$s/%2$s)</string>
+    <string name="ucrop_picturelib_num_postfix">%1$s张</string>
+    <string name="ucrop_picturelib_message_max_num">你最多可以选择%1$s张图片</string>
+    <string name="ucrop_picturelib_save_ing">保存图片中…</string>
+    <string name="ucrop_picturelib_select_photo">选择相册</string>
+    <string name="ucrop_picturelib_select_video">选择视频</string>
+
+    <string name="ucrop_picturelib_lately_image">最近照片</string>
+    <string name="ucrop_picturelib_lately_video">最近视频</string>
+
+    <string name="ucrop_picturelib_no_photo">相册空空如也，赶紧去拍几张吧~</string>
+    <string name="ucrop_picturelib_no_video">视频空空如也，赶紧去录个视频吧~</string>
+</resources>
