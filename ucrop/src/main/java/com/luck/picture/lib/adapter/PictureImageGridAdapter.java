@@ -136,11 +136,12 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
             } else {
                 Glide.with(context)
                         .load(path)
-                        .placeholder(R.drawable.ucrop_image_placeholder)
-                        .crossFade()
-                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                        .centerCrop()
+//                        .placeholder(R.drawable.ucrop_image_placeholder)
+//                        .crossFade()
+//                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
+//                        .centerCrop()
                         .into(contentHolder.picture);
+
 
                 contentHolder.rl_duration.setVisibility(View.GONE);
             }
@@ -237,7 +238,6 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         if (selectImages.size() >= maxSelectNum && !isChecked) {
             ToastUtils.showMsg(context,context.getString(R.string.ucrop_picturelib_message_max_num, maxSelectNum));
-//            Toast.makeText(context, context.getString(R.string.message_max_num, maxSelectNum), Toast.LENGTH_LONG).show();
             return;
         }
         if (isChecked) {

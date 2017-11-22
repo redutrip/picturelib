@@ -15,9 +15,15 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
+        debug {
+
+        }
+
+        integrate {
+
+        }
+
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -32,6 +38,7 @@ android {
         jni.srcDirs = [];
     }
 
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -40,6 +47,8 @@ dependencies {
     compile rootProject.ext.dependencies["rxandroid"]
     compile rootProject.ext.dependencies["glide"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+
     compile 'com.commit451:PhotoView:1.2.4'
 
 }

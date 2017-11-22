@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.luck.picture.lib.model.LocalMediaLoader;
 import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.entity.LocalMedia;
@@ -67,11 +66,11 @@ public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAl
         } else {
             Glide.with(mContext)
                     .load(imagePath)
-                    .placeholder(R.drawable.ucrop_ic_placeholder)
-                    .error(R.drawable.ucrop_ic_placeholder)
-                    .centerCrop()
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
+//                    .placeholder(R.drawable.ucrop_ic_placeholder)
+//                    .error(R.drawable.ucrop_ic_placeholder)
+//                    .centerCrop()
+//                    .crossFade()
+//                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     .into(holder.first_image);
 
         }

@@ -19,7 +19,7 @@
     <string name="ucrop_picturelib_use">使用</string>
     <string name="ucrop_picturelib_done_num">完成(%1$s/%2$s)</string>
     <string name="ucrop_picturelib_num_postfix">%1$s张</string>
-    <string name="ucrop_picturelib_message_max_num">你最多可以选择%1$s张图片</string>
+    <string name="ucrop_picturelib_message_max_num">你最多可以选择%1$d张图片</string>
     <string name="ucrop_picturelib_save_ing">保存图片中…</string>
     <string name="ucrop_picturelib_select_photo">选择相册</string>
     <string name="ucrop_picturelib_select_video">选择视频</string>
