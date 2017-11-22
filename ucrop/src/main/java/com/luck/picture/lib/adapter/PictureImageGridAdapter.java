@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.luck.picture.lib.model.FunctionConfig;
 import com.luck.picture.lib.model.LocalMediaLoader;
 import com.luck.picture.lib.model.ToastUtils;
@@ -134,12 +135,14 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
                 contentHolder.rl_duration.setVisibility(View.VISIBLE);
                 contentHolder.tv_duration.setText("时长：" + timeParse(duration));
             } else {
+                RequestOptions options = new RequestOptions()
+                        .centerCrop()
+                        .placeholder(R.drawable.ucrop_ic_placeholder)
+                        .error(R.drawable.ucrop_ic_placeholder)
+                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC);
                 Glide.with(context)
                         .load(path)
-//                        .placeholder(R.drawable.ucrop_image_placeholder)
-//                        .crossFade()
-//                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
-//                        .centerCrop()
+                        .apply(options)
                         .into(contentHolder.picture);
 
 

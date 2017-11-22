@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.luck.picture.lib.model.LocalMediaLoader;
 import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.entity.LocalMedia;
@@ -64,13 +66,16 @@ public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAl
         if (type == LocalMediaLoader.TYPE_VIDEO) {
             Glide.with(mContext).load(imagePath).thumbnail(0.5f).into(holder.first_image);
         } else {
+
+            RequestOptions options = new RequestOptions()
+                    .centerCrop()
+                    .placeholder(R.drawable.ucrop_ic_placeholder)
+                    .error(R.drawable.ucrop_ic_placeholder)
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC);
+
             Glide.with(mContext)
                     .load(imagePath)
-//                    .placeholder(R.drawable.ucrop_ic_placeholder)
-//                    .error(R.drawable.ucrop_ic_placeholder)
-//                    .centerCrop()
-//                    .crossFade()
-//                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                    .apply(options)
                     .into(holder.first_image);
 
         }
