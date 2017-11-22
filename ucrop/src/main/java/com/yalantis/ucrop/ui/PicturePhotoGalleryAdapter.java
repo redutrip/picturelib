@@ -22,10 +22,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.entity.LocalMedia;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,12 +74,14 @@ public class PicturePhotoGalleryAdapter extends RecyclerView.Adapter<PicturePhot
             holder.iv_dot.setVisibility(View.GONE);
         }
 
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .placeholder(R.color.ucrop_grey)
+                .diskCacheStrategy(DiskCacheStrategy.ALL);
+
         Glide.with(context)
                 .load(path)
-                .placeholder(R.color.ucrop_grey)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .centerCrop()
+                .apply(options)
                 .into(holder.mIvPhoto);
     }
 

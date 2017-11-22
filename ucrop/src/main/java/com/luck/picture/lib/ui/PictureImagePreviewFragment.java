@@ -11,9 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.luck.picture.lib.model.FunctionConfig;
 import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.entity.LocalMedia;
@@ -52,17 +51,28 @@ public class PictureImagePreviewFragment extends Fragment {
         final PhotoViewAttacher mAttacher = new PhotoViewAttacher(imageView);
         selectImages = (List<LocalMedia>) getArguments().getSerializable(FunctionConfig.EXTRA_PREVIEW_SELECT_LIST);
         String path = getArguments().getString(PATH);
+//        Glide.with(container.getContext())
+//                .load(path)
+//                .asBitmap()
+//                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+//                .into(new SimpleTarget<Bitmap>(480, 800) {
+//                    @Override
+//                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//                        imageView.setImageBitmap(resource);
+//                        mAttacher.update();
+//                    }
+//                });
         Glide.with(container.getContext())
-                .load(path)
                 .asBitmap()
-                .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .into(new SimpleTarget<Bitmap>(480, 800) {
+                .load(path)
+                .into(new SimpleTarget<Bitmap>(480,800) {
                     @Override
-                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                    public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                         imageView.setImageBitmap(resource);
                         mAttacher.update();
                     }
                 });
+
         mAttacher.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
             @Override
             public void onViewTap(View view, float x, float y) {
