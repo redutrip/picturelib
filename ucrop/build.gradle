@@ -42,13 +42,13 @@ android {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["appcompat-v7"]
-    compile rootProject.ext.dependencies["rxjava"]
-    compile rootProject.ext.dependencies["rxandroid"]
-    compile rootProject.ext.dependencies["glide"]
-    compile rootProject.ext.dependencies["recyclerview-v7"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
 
-    compile 'com.commit451:PhotoView:1.2.4'
+    implementation 'com.commit451:PhotoView:1.2.4'
 
 }
